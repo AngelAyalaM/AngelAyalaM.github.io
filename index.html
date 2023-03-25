@@ -5,6 +5,9 @@
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
+      <a-assets>
+        <video id="video" autoplay loop="false" src="asset/video/Inegollaw.m4v" position="0 -1 0></video>
+      </a-assets>
       <a-marker preset="hiro">
         
         <a-entity
@@ -13,7 +16,7 @@
           gltf-model="https://raw.githack.com/AngelAyalaM/AngelAyalaM.github.io/main/asset/image/1v2.jpg"
         > 
         <a-entity rotation="-90 0 0">
-          <a-video autoplay loop= "false" src="asset/video/Inegollaw.m4v" width="4" height="2.25" position="0 -1 0></a-video>
+          <a-video src="#video" width="4" height="2.25" ></a-video>
            
         </a-entity> 
         
@@ -25,7 +28,7 @@
           gltf-model="https://raw.githack.com/AngelAyalaM/AngelAyalaM.github.io/main/asset/image/1v2.jpg"
         >
         <a-entity rotation="-90 0 0">
-            
+
        </a-entity>
       </a-entity>
       </a-marker>
