@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  
+  <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+<script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
@@ -16,10 +17,7 @@
           scale="2 1 1"
           gltf-model="https://raw.githack.com/AngelAyalaM/AngelAyalaM.github.io/main/asset/image/1v2.jpg"
         > 
-        <a-entity rotation="-90 0 0">
-          <a-video src="#video" width="2" height="1.5" ></a-video>
-           
-        </a-entity> 
+        <a-entity geometry="primitive:circle;" position="-1.5 1.5 0" material="shader:gif;src:asset/gif/Test3D.gif;" gif=""></a-entity> 
         
        
          </a-entity>
