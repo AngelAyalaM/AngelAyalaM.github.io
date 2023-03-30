@@ -1,42 +1,23 @@
 <!DOCTYPE html>
-<html>
-  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
-  <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>AR.js and A-Frame Example</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.8.4/drawing_utils.d.ts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.8.4/holistic.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body>
+    <a-scene embedded arjs="sourceType: webcam;">
       <a-assets>
-        <video id="video" autoplay loop="true" src="asset/video/Inegollaw.m4v" ></video>
+        <video id="video" autoplay loop src="asset/video/Inegollaw.m4v"></video>
+        <img id="gif" src="asset/gif/Test3D.gif">
       </a-assets>
       <a-marker preset="hiro">
-        
-        <!-- <a-entity
-          position="0 0 0"
-          scale="2 1 1"
-          gltf-model="https://raw.githack.com/AngelAyalaM/AngelAyalaM.github.io/main/asset/image/1v2.jpg"
-        > 
-        <a-assets>
-          <img id="gif" src="asset/gif/Test3D.gif">
-        </a-assets> 
-        <a-plane position="0 0 -5" width="4" height="2" material="src: #gif;"></a-plane>
-       
-         </a-entity> -->
-         <a-entity
-         position="0 0 2"
-         scale="2 1 1"
-          gltf-model="https://raw.githack.com/AngelAyalaM/AngelAyalaM.github.io/main/asset/image/1v2.jpg"
-        >
-        <a-entity rotation="-90 0 0"  sound="src: #video; autoplay: false;" 
-        markerhandler
-        cursor-listener>
-          <a-video src="#video" loop autoplay onended="this.pause();"></a-video>
-          
-
-       </a-entity>
-      </a-entity>
+        <a-image src="#gif" position="0 0.1 0" width="2" height="2"></a-image>
+        <a-plane position="0 -0.1 0" width="2" height="1.5" material="src: #video;"></a-plane>
       </a-marker>
-     
       <a-entity camera></a-entity>
     </a-scene>
   </body>
