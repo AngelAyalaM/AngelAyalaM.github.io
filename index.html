@@ -11,14 +11,39 @@
   <body>
     <a-scene embedded arjs="sourceType: webcam;">
       <a-assets>
-        <video id="video" autoplay loop src="asset/video/Inegollaw.m4v"></video>
+        <video id="video" autoplay src="asset/video/Inegollaw.m4v" crossorigin="anonymous"></video>
         <img id="gif" src="asset/gif/Test3D.gif">
       </a-assets>
-      <a-marker preset="hiro">
+      <a-marker preset="hiro" emitevents="true" id="marker">
         <a-image src="#gif" position="0 0.1 0" width="2" height="2"></a-image>
-        <a-plane position="0 -0.1 0" width="2" height="1.5" material="src: #video;"></a-plane>
+        <a-plane position="0 -0.1 0" width="2" height="1.5" material="src: #video;" visible="false"></a-plane>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
+
+    <script>
+      var marker = document.querySelector("#marker");
+      marker.addEventListener("markerFound", function() {
+        var video = document.querySelector("#video");
+        var plane = document.querySelector("a-plane");
+
+        plane.setAttribute("visible", "true");
+        video.play();
+
+        video.addEventListener("ended", function() {
+          plane.setAttribute("visible", "false");
+        });
+      });
+
+      marker.addEventListener("markerLost", function() {
+        var video = document.querySelector("#video");
+        var plane = document.querySelector("a-plane");
+
+        plane.setAttribute("visible", "false");
+        video.pause();
+        video.currentTime = 0;
+      });
+    </script>
   </body>
 </html>
+
