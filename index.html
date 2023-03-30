@@ -16,7 +16,7 @@
         <video id="video2" autoplay src="asset/video/Test 3D_VP9.webm" crossorigin="anonymous"></video>
       </a-assets>
       <a-marker preset="hiro" markerhandler>    
-        <a-video rotation="-90 0 0" position="0 0.1 3" width="4.5" height="3.5"id="video-top" src="asset/video/Inegollaw.m4v" autoplay="false" loop="false" ></a-video>
+        <a-video rotation="-90 0 0" position="0 0.1 3" width="4.5" height="3.5" id="video-top" src="asset/video/Inegollaw.m4v" autoplay="false" loop="false" ></a-video>
         <a-plane rotation="-90 0 0" position="0 -0.1 -3" width="4.5" height="4" id="video-bottom" src="asset/video/Test 3D_VP9.webm" visible="false" material="shader: flat"></a-plane>
       </a-marker>
 
@@ -31,6 +31,7 @@
             var videoBottom = document.getElementById('video-bottom');
     
             videoTop.play();
+            videoBottom.play();
             videoBottom.setAttribute('visible', 'true');
     
             videoTop.addEventListener('ended', function() {
