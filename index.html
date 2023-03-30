@@ -28,7 +28,7 @@
       var marker = document.querySelector("#marker");
       marker.addEventListener("markerFound", function() {
         var video = document.querySelector("#video-top");
-        var plane = document.querySelector("a-plane");
+        var plane = document.querySelector("#video-bottom");
 
         plane.setAttribute("visible", "true");
         video.play();
@@ -40,7 +40,7 @@
 
       marker.addEventListener("markerLost", function() {
         var video = document.querySelector("#video-top");
-        var plane = document.querySelector("a-plane");
+        var plane = document.querySelector("#video-bottom");
 
         plane.setAttribute("visible", "false");
         video.pause();
