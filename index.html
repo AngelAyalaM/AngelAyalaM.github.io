@@ -13,11 +13,11 @@
     <a-scene embedded arjs="sourceType: webcam;">
       <a-assets>
         <video id="video-top" autoplay src="asset/video/Inegollaw.m4v" crossorigin="anonymous"></video>
-        <video id="video2" autoplay src="asset/video/Test 3D_VP9.webm" crossorigin="anonymous"></video>
+        <video id="video-bottom" autoplay src="asset/video/Test 3D_VP9.webm" crossorigin="anonymous"></video>
       </a-assets>
       <a-marker preset="hiro" emitevents="true" id="marker">    
         <a-video rotation="-90 0 0" src="#video-top" position="0 0.1 3" width="4.5" height="3.5"   ></a-video>
-        <a-plane rotation="-90 0 0" position="0 -0.1 -3" width="4.5" height="4" id="video-bottom" src="asset/video/Test 3D_VP9.webm" visible="false" material="shader: flat;color: white; transparent: true; opacity: 0.5;"></a-plane>
+        <a-plane rotation="-90 0 0" position="0 -0.1 -3" width="4.5" height="4" src="#video-bottom" visible="false" material="shader: flat;color: white; transparent: true; opacity: 0.5;"></a-plane>
       </a-marker>
 
       <a-entity camera></a-entity>
