@@ -41,6 +41,14 @@
               videoBottom.setAttribute('visible', 'false');
             });
           });
+          marker.addEventListener("markerLost", function() {
+        var video = document.querySelector("#video-top");
+        var plane = document.querySelector("a-plane");
+
+        plane.setAttribute("visible", "false");
+        video.pause();
+        video.currentTime = 0;
+      });
         }
       });
     </script>
