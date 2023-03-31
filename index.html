@@ -282,6 +282,10 @@
             var currentIndex = 0;
             
             var intervalID = setInterval(() => {
+              if (currentIndex > 0) {
+                gifFrames[currentIndex - 1].setAttribute('visible', false);
+              }
+
               gifFrames[currentIndex].setAttribute('visible', true);
               currentIndex++;
               
