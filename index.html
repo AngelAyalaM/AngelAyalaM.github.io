@@ -169,7 +169,7 @@
             var intervalID = setInterval(() => {
               gifFrames[currentIndex].setAttribute('visible', true);
               currentIndex++;
-              
+              gifFrames[currentIndex].setAttribute('visible', false);
               if (currentIndex >= gifFrames.length) {
                 clearInterval(intervalID);
               }
