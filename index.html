@@ -14,11 +14,64 @@
       <a-assets>
         <video id="video-top" autoplay src="asset/video/Inegollaw.m4v" crossorigin="anonymous"></video>
         <video id="video-bottom" autoplay src="asset/video/Test 3D_VP9.webm" crossorigin="anonymous" ></video>
+        <img id="gif-texture" src="asset/Alpha/Test 3D000.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D001.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D002.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D003.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D004.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D005.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D006.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D007.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D008.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D009.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D010.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D011.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D012.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D013.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D014.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D015.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D016.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D017.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D018.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D019.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D020.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D021.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D022.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D023.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D024.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D025.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D026.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D027.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D028.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D029.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D030.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D031.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D032.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D033.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D034.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D035.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D036.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D037.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D038.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D039.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D040.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D041.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D042.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D043.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D044.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D045.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D046.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D047.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D048.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D049.png">
+        <img id="gif-texture" src="asset/Alpha/Test 3D050.png">
+
       </a-assets>
       <a-marker preset="hiro" emitevents="true" id="marker">    
         <a-video rotation="-90 0 0" src="#video-top" position="0 0.1 3" width="4.5" height="3.5"   ></a-video>
-        <a-video rotation="-90 0 0" src="#video-bottom" position="0 0.1 -3" width="4.5" height="3.5" material="transparent: true;" alpha-test="1.0"  ></a-video>
-        <a-image  rotation="-90 0 0" id="gif-frame-1" src="asset/Alpha/Test 3D021.png"  position="3 0.1 0" width="4.5" height="3.5"></a-image>
+        <!-- <a-video rotation="-90 0 0" src="#video-bottom" position="0 0.1 -3" width="4.5" height="3.5" material="transparent: true;" alpha-test="1.0"  ></a-video> -->
+        <a-gif rotation="-90 0 0" src="#gif-texture" position="0 0.1 -3" width="4.5" height="3.5" animation="property: material.texture.offset; dur: 1000; to: -0.5 0;"></a-gif>
+
       </a-marker>
 
       <a-entity camera></a-entity>
