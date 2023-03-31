@@ -169,9 +169,10 @@
             var intervalID = setInterval(() => {
               gifFrames[currentIndex].setAttribute('visible', true);
               currentIndex++;
-              gifFrames[currentIndex].setAttribute('visible', false);
+              
               if (currentIndex >= gifFrames.length) {
                 clearInterval(intervalID);
+                gifFrames[currentIndex].setAttribute('visible', false);
               }
             }, 100); // set the time interval for each image to show
           });
