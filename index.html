@@ -155,7 +155,7 @@
       });
       AFRAME.registerComponent('markerhandler', {
         init: function() {
-          this.el.sceneEl.addEventListener('markerFound', playGIF(), () => {
+          this.el.sceneEl.addEventListener('markerFound', playGIF, () => {
             var gifFrame1El = document.querySelector('#gif-frame-1');
             var gifFrame2El = document.querySelector('#gif-frame-2');
             var gifFrame3El = document.querySelector('#gif-frame-3');
