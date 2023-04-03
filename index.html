@@ -155,7 +155,7 @@
       });
       AFRAME.registerComponent('markerhandler', {
         init: function() {
-          this.el.sceneEl.addEventListener('markerFound', () => {
+          this.el.sceneEl.addEventListener('markerFound', playGIF, () => {
             var gifFrame1El = document.querySelector('#gif-frame-1');
             var gifFrame2El = document.querySelector('#gif-frame-2');
             var gifFrame3El = document.querySelector('#gif-frame-3');
@@ -281,21 +281,33 @@
           ];
             var currentIndex = 0;
             
-            var intervalID = setInterval(() => {
-              if (currentIndex > 0) {
-                gifFrames[currentIndex - 1].setAttribute('visible', false);
-              }
+            var intervalID;
 
-              gifFrames[currentIndex].setAttribute('visible', true);
-              currentIndex++;
+            function playGIF() {
+              // Reiniciar el índice
+              currentIndex = 0;
               
-              if (currentIndex >= gifFrames.length) {
+              // Detener el intervalo actual (si hay uno)
+              if (intervalID) {
                 clearInterval(intervalID);
-                
               }
               
+              // Iniciar un nuevo intervalo
+              intervalID = setInterval(() => {
+                // Ocultar la imagen anterior
+                if (currentIndex > 0) {
+                  gifFrames[currentIndex - 1].setAttribute('visible', false);
+                }
 
-            }, 100); // set the time interval for each image to show
+                // Mostrar la imagen actual
+                gifFrames[currentIndex].setAttribute('visible', true);
+                currentIndex++;
+
+                if (currentIndex >= gifFrames.length) {
+                  clearInterval(intervalID);
+                }
+              }, 100);
+            } // set the time interval for each image to show
           });
         }
       });
