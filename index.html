@@ -1,27 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MindAR Video</title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
-    <a-scene mindar-image="imageTargetSrc:https://cdn.githubraw.com/AngelAyalaM/AngelAyalaM.github.io/main/asset/image/targets.mind" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
-        <video id="my-video" src="asset/video/Inegollaw.m4v"></video>
+        <video id="my-video" src="asset/video/Inegollaw.m4v" preload="auto"></video>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      <a-marker preset="hiro">
-        <a-video
-          id="my-aframe-video"
-          width="4"
-          height="3"
-          position="0 0 -4"
-          src="#my-video"
-          autoplay="false"
-          loop="false"
-        ></a-video>
+      <a-marker>
+        <a-video id="my-aframe-video" width="4" height="3" position="0 0 -4" src="#my-video"></a-video>
+        <a-image src="asset/image/targets.mind" width="1" height="1"></a-image>
+      </a-marker>
     </a-scene>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
     <script src="app.js" type="module"></script>
   </body>
 </html>
