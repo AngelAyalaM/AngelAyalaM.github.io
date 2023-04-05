@@ -141,6 +141,13 @@
 
         video.play();
         video2.play();
+        function stabilizeVideo() {
+          video.style.transform = "translateZ(0)";
+          video2.style.transform = "translateZ(0)";
+          requestAnimationFrame(stabilizeVideo);
+        }
+
+        requestAnimationFrame(stabilizeVideo);
 
       });
 
