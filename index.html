@@ -280,28 +280,20 @@
             gifFrame97El,gifFrame98El,gifFrame99El,gifFrame100El,gifFrame101El,gifFrame102El,gifFrame103El,gifFrame104El,gifFrame105El,
             gifFrame106El,gifFrame107El,gifFrame108El
           ];
-          var currentIndex = 0;
-
-            for (let i = 0; i < gifFrames.length; i++) {
-              gifFrames[i].setAttribute('visible', false);
-            }
+           var currentIndex = 0;
 
             var intervalID = setInterval(() => {
-              // Ocultar la imagen anterior
-              if (currentIndex > 0) {
-                gifFrames[currentIndex - 1].setAttribute('visible', false);
-              }
+              // Ocultar todas las imágenes anteriores
+              gifFrames.forEach((frame) => {
+                frame.setAttribute('visible', false);
+              });
 
               // Mostrar la imagen actual
               gifFrames[currentIndex].setAttribute('visible', true);
               currentIndex++;
 
-              // Si es la última imagen, ocultar todas las imágenes y comenzar de nuevo
               if (currentIndex >= gifFrames.length) {
                 currentIndex = 0;
-                for (let i = 0; i < gifFrames.length; i++) {
-                  gifFrames[i].setAttribute('visible', false);
-                }
               }
             }, 20); // set the time interval for each image to show
          });     
