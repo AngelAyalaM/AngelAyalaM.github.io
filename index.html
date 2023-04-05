@@ -147,12 +147,7 @@
       marker.addEventListener("markerLost", function() {
         var video = document.querySelector("#video-top");
         var video2 = document.querySelector("#video-bottom");
-        for (var i = 0; i < gifFrames.length; i++) {
-              gifFrames[i].setAttribute('visible', false);
-            }
-            clearInterval(intervalID);
-            currentIndex = 0;
-
+        
         
         video.pause();
         video2.pause();
@@ -287,24 +282,26 @@
           ];
           var currentIndex = 0;
 
-          var intervalID = setInterval(() => {
-            // Ocultar la imagen anterior
-            if (currentIndex > 0) {
-              gifFrames[currentIndex - 1].setAttribute('visible', false);
-            }
+            var intervalID = setInterval(() => {
+              if (marker.visible) {
+                hideAllFrames();
+                gifFrames[currentIndex].setAttribute('visible', true);
+                currentIndex++;
 
-            // Mostrar la imagen actual
-            
-            gifFrames[currentIndex].setAttribute('visible', true);
-            currentIndex++;
-
-
-            if (currentIndex >= gifFrames.length) {
-              clearInterval(intervalID);
-            }
-          }, 70); // set the time interval for each image to show
+                if (currentIndex >= gifFrames.length) {
+                  clearInterval(intervalID);
+                }
+              } else {
+                hideAllFrames();
+                currentIndex = 0;
+              }
+            }, 70); // set the time interval for each image to show
          });
-         
+          function hideAllFrames() {
+            gifFrames.forEach((frame) => {
+              frame.setAttribute('visible', false);
+            });
+          }
         }
       });
 
