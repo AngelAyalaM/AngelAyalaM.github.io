@@ -291,9 +291,9 @@
             // Mostrar la imagen actual
             gifFrames[currentIndex].setAttribute('visible', true);
             currentIndex++;
-
+            currentIndex = 0;
             if (currentIndex >= gifFrames.length) {
-              currentIndex = 0;
+              
             }
           }, 20); // set the time interval for each image to show
          });
