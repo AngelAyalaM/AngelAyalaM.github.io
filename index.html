@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title></title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.8.4/drawing_utils.d.ts"></script>
@@ -292,11 +293,20 @@
             gifFrames[currentIndex].setAttribute('visible', true);
             currentIndex++;
 
+
             if (currentIndex >= gifFrames.length) {
               clearInterval(intervalID);
             }
           }, 70); // set the time interval for each image to show
          });
+          marker.addEventListener('markerLost', function () {
+            // Ocultar todas las imágenes
+            for (var i = 0; i < gifFrames.length; i++) {
+              gifFrames[i].setAttribute('visible', false);
+            }
+            clearInterval(intervalID);
+            currentIndex = 0;
+          });
         }
       });
 
