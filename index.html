@@ -147,6 +147,11 @@
       marker.addEventListener("markerLost", function() {
         var video = document.querySelector("#video-top");
         var video2 = document.querySelector("#video-bottom");
+        for (var i = 0; i < gifFrames.length; i++) {
+              gifFrames[i].setAttribute('visible', false);
+            }
+            clearInterval(intervalID);
+            currentIndex = 0;
 
         
         video.pause();
@@ -299,14 +304,7 @@
             }
           }, 70); // set the time interval for each image to show
          });
-          marker.addEventListener('markerLost', function () {
-            // Ocultar todas las imágenes
-            for (var i = 0; i < gifFrames.length; i++) {
-              gifFrames[i].setAttribute('visible', false);
-            }
-            clearInterval(intervalID);
-            currentIndex = 0;
-          });
+         
         }
       });
 
