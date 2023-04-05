@@ -283,25 +283,21 @@
           var currentIndex = 0;
 
             var intervalID = setInterval(() => {
-              if (marker.visible) {
-                hideAllFrames();
-                gifFrames[currentIndex].setAttribute('visible', true);
-                currentIndex++;
+            // Ocultar la imagen anterior
+            if (currentIndex > 0) {
+              gifFrames[currentIndex - 1].setAttribute('visible', false);
+            }
 
-                if (currentIndex >= gifFrames.length) {
-                  clearInterval(intervalID);
-                }
-              } else {
-                hideAllFrames();
-                currentIndex = 0;
-              }
-            }, 70); // set the time interval for each image to show
+            // Mostrar la imagen actual
+            gifFrames[currentIndex].setAttribute('visible', true);
+            currentIndex++;
+
+            if (currentIndex >= gifFrames.length) {
+              currentIndex = 0;
+            }
+          }, 70); // set the time interval for each image to show
          });
-          function hideAllFrames() {
-            gifFrames.forEach((frame) => {
-              frame.setAttribute('visible', false);
-            });
-          }
+         
         }
       });
 
